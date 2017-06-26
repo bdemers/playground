@@ -1,0 +1,12 @@
+{
+    "name": "bretterer/playground",
+    "require": {
+        "sami/sami": "^4.0"
+    },
+    "authors": [
+        {
+            "name": "Brian Retterer",
+            "email": "bretterer@gmail.com"
+        }
+    ]
+}

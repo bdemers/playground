@@ -1,0 +1,25 @@
+language: php
+
+branches:
+  except:
+    -gh-pages
+
+install:
+  - composer install
+
+after_success:
+ - if [[ $DEPLOY_DOCS ]]; then ./scripts/prepare-docs.sh; fi
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build/gh-pages
+  on:
+    php: 7.1
+    tags: true
+
+matrix:
+  include:
+    - php: 7.1
+      env: DEPLOY_DOCS=tue
